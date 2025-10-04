@@ -49,10 +49,10 @@ namespace WannaFish
             this.radButtonElement_myrtle = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement_wrightsville = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement_carolinabeach = new Telerik.WinControls.UI.RadButtonElement();
-            this.crystalDarkTheme1 = new Telerik.WinControls.Themes.CrystalDarkTheme();
-            this.desertTheme1 = new Telerik.WinControls.Themes.DesertTheme();
-            this.office2007BlackTheme1 = new Telerik.WinControls.Themes.Office2007BlackTheme();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.office2013DarkTheme1 = new Telerik.WinControls.Themes.Office2013DarkTheme();
+            this.office2019DarkTheme1 = new Telerik.WinControls.Themes.Office2019DarkTheme();
+            this.aquaTheme1 = new Telerik.WinControls.Themes.AquaTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitContainer1)).BeginInit();
             this.radSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel1)).BeginInit();
@@ -91,7 +91,7 @@ namespace WannaFish
             this.radSplitContainer1.SplitterWidth = 2;
             this.radSplitContainer1.TabIndex = 0;
             this.radSplitContainer1.TabStop = false;
-            this.radSplitContainer1.ThemeName = "Office2010Black";
+            this.radSplitContainer1.ThemeName = "Office2019Dark";
             // 
             // splitPanel1
             // 
@@ -102,7 +102,7 @@ namespace WannaFish
             this.splitPanel1.TabIndex = 0;
             this.splitPanel1.TabStop = false;
             this.splitPanel1.Text = "splitPanel1";
-            this.splitPanel1.ThemeName = "Office2010Black";
+            this.splitPanel1.ThemeName = "Office2019Dark";
             // 
             // radSplitContainer2
             // 
@@ -116,46 +116,53 @@ namespace WannaFish
             this.radSplitContainer2.SplitterWidth = 2;
             this.radSplitContainer2.TabIndex = 0;
             this.radSplitContainer2.TabStop = false;
-            this.radSplitContainer2.ThemeName = "Office2010Black";
+            this.radSplitContainer2.ThemeName = "Office2019Dark";
             // 
             // splitPanel3
             // 
             this.splitPanel3.Controls.Add(this.radChartView1);
             this.splitPanel3.Location = new System.Drawing.Point(0, 0);
             this.splitPanel3.Name = "splitPanel3";
-            this.splitPanel3.Size = new System.Drawing.Size(634, 366);
+            this.splitPanel3.Size = new System.Drawing.Size(634, 367);
+            this.splitPanel3.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, 0.0006821282F);
+            this.splitPanel3.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, 1);
             this.splitPanel3.TabIndex = 0;
             this.splitPanel3.TabStop = false;
             this.splitPanel3.Text = "splitPanel3";
-            this.splitPanel3.ThemeName = "Office2010Black";
+            this.splitPanel3.ThemeName = "Office2019Dark";
             // 
             // radChartView1
             // 
             cartesianArea1.ShowGrid = true;
             this.radChartView1.AreaDesign = cartesianArea1;
+            this.radChartView1.BackColor = System.Drawing.Color.DimGray;
             this.radChartView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radChartView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radChartView1.Location = new System.Drawing.Point(0, 0);
             this.radChartView1.Name = "radChartView1";
             this.radChartView1.ShowTitle = true;
-            this.radChartView1.Size = new System.Drawing.Size(634, 366);
+            this.radChartView1.Size = new System.Drawing.Size(634, 367);
             this.radChartView1.TabIndex = 0;
-            this.radChartView1.ThemeName = "Office2010Black";
+            this.radChartView1.ThemeName = "Aqua";
             this.radChartView1.Title = "Tide Chart";
             // 
             // splitPanel4
             // 
             this.splitPanel4.Controls.Add(this.radGridView1);
-            this.splitPanel4.Location = new System.Drawing.Point(0, 368);
+            this.splitPanel4.Location = new System.Drawing.Point(0, 369);
             this.splitPanel4.Name = "splitPanel4";
-            this.splitPanel4.Size = new System.Drawing.Size(634, 367);
+            this.splitPanel4.Size = new System.Drawing.Size(634, 366);
+            this.splitPanel4.SizeInfo.AutoSizeScale = new System.Drawing.SizeF(0F, -0.0006821282F);
+            this.splitPanel4.SizeInfo.SplitterCorrection = new System.Drawing.Size(0, -1);
             this.splitPanel4.TabIndex = 1;
             this.splitPanel4.TabStop = false;
             this.splitPanel4.Text = "splitPanel4";
-            this.splitPanel4.ThemeName = "Office2010Black";
+            this.splitPanel4.ThemeName = "Office2019Dark";
             // 
             // radGridView1
             // 
             this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGridView1.Location = new System.Drawing.Point(0, 0);
             // 
             // 
@@ -175,9 +182,9 @@ namespace WannaFish
             this.radGridView1.ReadOnly = true;
             this.radGridView1.ShowGroupPanel = false;
             this.radGridView1.ShowGroupPanelScrollbars = false;
-            this.radGridView1.Size = new System.Drawing.Size(634, 367);
+            this.radGridView1.Size = new System.Drawing.Size(634, 366);
             this.radGridView1.TabIndex = 0;
-            this.radGridView1.ThemeName = "Office2010Black";
+            this.radGridView1.ThemeName = "Office2019Dark";
             this.radGridView1.TitleText = "Weather Data";
             // 
             // splitPanel2
@@ -189,7 +196,7 @@ namespace WannaFish
             this.splitPanel2.TabIndex = 1;
             this.splitPanel2.TabStop = false;
             this.splitPanel2.Text = "splitPanel2";
-            this.splitPanel2.ThemeName = "Office2010Black";
+            this.splitPanel2.ThemeName = "Office2019Dark";
             // 
             // radSplitContainer3
             // 
@@ -203,7 +210,7 @@ namespace WannaFish
             this.radSplitContainer3.SplitterWidth = 2;
             this.radSplitContainer3.TabIndex = 0;
             this.radSplitContainer3.TabStop = false;
-            this.radSplitContainer3.ThemeName = "Office2010Black";
+            this.radSplitContainer3.ThemeName = "Office2019Dark";
             // 
             // splitPanel5
             // 
@@ -216,7 +223,7 @@ namespace WannaFish
             this.splitPanel5.TabIndex = 0;
             this.splitPanel5.TabStop = false;
             this.splitPanel5.Text = "splitPanel5";
-            this.splitPanel5.ThemeName = "Office2010Black";
+            this.splitPanel5.ThemeName = "Office2019Dark";
             // 
             // vlcControl1
             // 
@@ -243,7 +250,7 @@ namespace WannaFish
             this.splitPanel6.TabIndex = 1;
             this.splitPanel6.TabStop = false;
             this.splitPanel6.Text = "splitPanel6";
-            this.splitPanel6.ThemeName = "Office2010Black";
+            this.splitPanel6.ThemeName = "Office2019Dark";
             // 
             // radCarousel1
             // 
@@ -269,7 +276,7 @@ namespace WannaFish
             this.radCarousel1.Size = new System.Drawing.Size(635, 195);
             this.radCarousel1.TabIndex = 0;
             this.radCarousel1.Text = "radCarousel1";
-            this.radCarousel1.ThemeName = "Office2010Black";
+            this.radCarousel1.ThemeName = "Office2019Dark";
             this.radCarousel1.VisibleItemCount = 6;
             // 
             // radButtonElement_myrtle
@@ -333,7 +340,6 @@ namespace WannaFish
         private Telerik.WinControls.UI.RadSplitContainer radSplitContainer1;
         private Telerik.WinControls.UI.SplitPanel splitPanel1;
         private Telerik.WinControls.UI.SplitPanel splitPanel2;
-        public Telerik.WinControls.Themes.CrystalDarkTheme crystalDarkTheme1;
         private Telerik.WinControls.UI.RadSplitContainer radSplitContainer2;
         private Telerik.WinControls.UI.SplitPanel splitPanel3;
         private Telerik.WinControls.UI.SplitPanel splitPanel4;
@@ -347,8 +353,9 @@ namespace WannaFish
         public Telerik.WinControls.UI.RadButtonElement radButtonElement_wrightsville;
         public Telerik.WinControls.UI.RadButtonElement radButtonElement_carolinabeach;
         public Telerik.WinControls.UI.RadGridView radGridView1;
-        public Telerik.WinControls.Themes.DesertTheme desertTheme1;
-        public Telerik.WinControls.Themes.Office2007BlackTheme office2007BlackTheme1;
         public Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
+        public Telerik.WinControls.Themes.Office2013DarkTheme office2013DarkTheme1;
+        public Telerik.WinControls.Themes.Office2019DarkTheme office2019DarkTheme1;
+        public Telerik.WinControls.Themes.AquaTheme aquaTheme1;
     }
 }

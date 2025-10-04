@@ -140,7 +140,11 @@ namespace WannaFish
 
             series.VerticalAxis = la;
 
+            radChartView1.Area.View.Palette = KnownPalette.Rainbow;
+            this.radChartView1.Area.Grid.BackColor = Color.DimGray;
+            this.radChartView1.Area.Grid.AlternatingBackColor = Color.Gray;
             radChartView1.Series.Add(series);
+            radChartView1.ShowGrid = true;
         }
 
         #endregion
