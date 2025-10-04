@@ -1,0 +1,8 @@
+API url builder site:
+https://tidesandcurrents.noaa.gov/api-helper/url-generator.html
+
+JSON:
+https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=8658120&product=predictions&datum=STND&time_zone=lst_ldt&units=english&format=json
+
+XML:
+https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8658559&units=standard&bdate=20251001&edate=20251001&timezone=LST/LDT&clock=12hour&datum=MLLW&interval=hilo&action=dailychart

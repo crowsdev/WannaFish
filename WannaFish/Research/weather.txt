@@ -1,0 +1,3 @@
+weather api request 001:
+https://api.open-meteo.com/v1/forecast?latitude=34.2356&longitude=-77.946&hourly=temperature_2m,precipitation,wind_speed_10m&current=temperature_2m,precipitation,wind_speed_10m,wind_direction_10m&timezone=auto&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch
+
