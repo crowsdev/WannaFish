@@ -28,7 +28,11 @@ namespace WannaFish
 
             this.vlcControl1.Play(new Uri(Streams.MyrtleGrove));
 
+            InitGridView();
+
             HandleTideChart(GetLatestTidalPredictionData());
+
+            HandleWeatherTable(GetWeather7Day());
         }
 
         #region CAMS
@@ -174,11 +178,58 @@ namespace WannaFish
             radGridView1.Columns.Add(tmCol);
             GridViewTextBoxColumn rcCol = new GridViewTextBoxColumn("RainChance");
             radGridView1.Columns.Add(rcCol);
+
+            radGridView1.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
         }
 
         private void HandleWeatherTable(WeatherData001 _wData)
         {
+            for (int i = 0; i < _wData.Hourly.Time.Count; i++)
+            {
+                DateTime dt = default;
+                if (!DateTime.TryParse(_wData.Hourly.Time[i], out dt))
+                {
+                    MessageBox.Show($"Failed to parse DateTime from {_wData.Hourly.Time[i]}", "AH FUCK", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    continue;
+                }
 
+                string ws = _wData.Hourly.WindSpeed10M[i].ToString() + " " + _wData.HourlyUnits.WindSpeed10M;
+                string wd = DegreesToCardinalDetailed(_wData.Hourly.WindDirection10M[i]);
+                string tm = _wData.Hourly.Temperature2M[i].ToString() + " " + _wData.HourlyUnits.Temperature2M.Replace("Â", "");
+                string rc = _wData.Hourly.PrecipitationProbability[i].ToString() + " " + _wData.HourlyUnits.PrecipitationProbability;
+
+                radGridView1.Rows.Add(new object[] { dt, ws, wd, tm, rc });
+            }
+        }
+
+        /// <summary>
+        /// Converts degrees to a 16-point cardinal direction string.
+        /// </summary>
+        /// <param name="degrees">The degree value (0-360).</param>
+        /// <returns>The cardinal direction string (e.g., "N", "NNE", "NE").</returns>
+        public static string DegreesToCardinalDetailed(long degrees)
+        {
+            // Normalize degrees to be within 0 and 360
+            degrees = (degrees % 360 + 360) % 360;
+
+            string[] cardinals = {
+                "N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
+                "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"
+            };
+
+            // Each cardinal direction covers 22.5 degrees (360 / 16)
+            // We add 11.25 (half of 22.5) to shift the ranges correctly for rounding.
+            // Then divide by 22.5 to get the index.
+            // The last "N" in the array handles the wrap-around for degrees close to 360.
+            int index = (int)Math.Round((degrees + 11.25) / 22.5);
+
+            // Ensure index stays within the bounds of the array
+            if (index >= cardinals.Length)
+            {
+                index = 0; // Wrap around to N for values like 359.9
+            }
+
+            return cardinals[index];
         }
 
         #endregion
