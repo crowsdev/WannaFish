@@ -151,27 +151,34 @@ namespace WannaFish
 
         #region Weather
 
+        private void InitGridView()
+        {
+            radGridView1.ReadOnly = true;
+            radGridView1.AutoScroll = true;
+            radGridView1.AllowAddNewRow = false; 
+            radGridView1.AllowDeleteRow = false; 
+            radGridView1.AllowDragToGroup = false; 
+            radGridView1.AllowEditRow = false; 
+            radGridView1.AllowSearchRow = false; 
+            radGridView1.EnableFiltering = false; 
+            radGridView1.EnableGrouping = false; 
+            radGridView1.EnableSorting = false;
+
+            GridViewDateTimeColumn dtCol = new GridViewDateTimeColumn("DateTime");
+            radGridView1.Columns.Add(dtCol);
+            GridViewTextBoxColumn wsCol = new GridViewTextBoxColumn("WindSpeed");
+            radGridView1.Columns.Add(wsCol);
+            GridViewTextBoxColumn wdCol = new GridViewTextBoxColumn("WindDirection");
+            radGridView1.Columns.Add(wdCol);
+            GridViewTextBoxColumn tmCol = new GridViewTextBoxColumn("TemperatureF");
+            radGridView1.Columns.Add(tmCol);
+            GridViewTextBoxColumn rcCol = new GridViewTextBoxColumn("RainChance");
+            radGridView1.Columns.Add(rcCol);
+        }
+
         private void HandleWeatherTable(WeatherData001 _wData)
         {
-            // Need to use RadGridView instead of shitty table-layout.
 
-
-
-
-            for (int i = 0; i < _wData.Hourly.Time.Count; i++)
-            {
-                string t = _wData.Hourly.Time[i];
-                double f = _wData.Hourly.Temperature2M[i];
-                double ws = _wData.Hourly.WindSpeed10M[i];
-                long wd = _wData.Hourly.WindDirection10M[i];
-                long p = _wData.Hourly.PrecipitationProbability[i];
-
-                string cellTxt = $"{t}\n" +
-                                 $"{f} F\n" +
-                                 $"{ws} mph\n" +
-                                 $"{wd} deg\n" +
-                                 $"{(p / 100)}%";
-            }
         }
 
         #endregion
